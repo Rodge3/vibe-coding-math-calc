@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f5f2" />
+    <meta name="description" content="A simple chat assistant for everyday arithmetic." />
+    <title>Sumwise | Arithmetic chat</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calculator.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Sumwise home">
+          <span class="brand-mark" aria-hidden="true">∑</span>
+          <span>sumwise</span>
+        </a>
+        <div class="topbar-right">
+          <span class="status"><span class="status-dot"></span>Ready to calculate</span>
+          <button class="clear-button" id="clear-chat" type="button" title="Clear conversation" aria-label="Clear conversation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3" /></svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="chat-layout" aria-label="Arithmetic assistant">
+        <div class="intro" id="intro">
+          <div class="intro-symbol" aria-hidden="true">+</div>
+          <p class="eyebrow">YOUR EVERYDAY MATH ASSISTANT</p>
+          <h1>What shall we<br /><span>work out?</span></h1>
+          <p class="intro-copy">Send me a calculation. I’ll take it from there.</p>
+          <div class="suggestions" aria-label="Try an example">
+            <button type="button" class="suggestion" data-expression="18% of 240">18% of 240 <span>↗</span></button>
+            <button type="button" class="suggestion" data-expression="(36 + 24) / 5">(36 + 24) / 5 <span>↗</span></button>
+            <button type="button" class="suggestion" data-expression="144 / 12">144 / 12 <span>↗</span></button>
+          </div>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite" aria-label="Conversation"></div>
+
+        <form class="composer" id="chat-form" autocomplete="off">
+          <label class="visually-hidden" for="message-input">Enter a math expression</label>
+          <input id="message-input" name="message" type="text" inputmode="decimal" placeholder="Ask a calculation... e.g. 128 / 4" spellcheck="false" />
+          <button class="send-button" type="submit" aria-label="Send calculation" title="Send calculation">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+        </form>
+        <p class="composer-note">Enter to send <span>·</span> Basic arithmetic, parentheses &amp; percentages</p>
+      </section>
+      <footer class="footer"><span>SMALL NUMBERS, CLEAR ANSWERS.</span><span>SUMWISE <span class="footer-year">/</span> 01</span></footer>
+    </main>
+  </body>
+</html>
